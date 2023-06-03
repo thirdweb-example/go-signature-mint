@@ -2,7 +2,7 @@
 
 ## How it works
 
-The server is written in Go and uses the Gin framework. It has a single endpoint, `/generate`, which takes a JSON body with a `address` field and returns a signed payload for signature minting an ERC-721 token. We then use this server in a vite react application to signature mint NFTs using the thirdweb React SDK.
+The server is written in Go and uses the Gin framework. It has a single endpoint, `/generate`, which takes a JSON body with a `address` field and returns a signed payload for [signature minting](https://portal.thirdweb.com/go/erc721_signature_minting) an ERC-721 token. We then use this server in a vite react application to signature mint NFTs using the thirdweb React SDK.
 
 ## How to set it up
 
