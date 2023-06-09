@@ -1,6 +1,5 @@
 import { Web3Button, useAddress, useContract } from "@thirdweb-dev/react";
 import "./styles/Home.css";
-import axios from "axios";
 
 export default function Home() {
   const address = useAddress();
@@ -11,11 +10,18 @@ export default function Home() {
 
   const mint = async () => {
     try {
-      const signature = await axios.post("http://localhost:8080/generate", {
-        address,
+      const request = await fetch("http://localhost:8080/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ address }),
       });
 
-      const nft = nftCollection?.erc721.mint(signature.data);
+      const signature = await request.json();
+      console.log(signature);
+
+      const nft = await nftCollection?.erc721.mint(signature);
       console.log(nft);
       return nft;
     } catch (error) {

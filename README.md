@@ -2,7 +2,7 @@
 
 ## How it works
 
-The server is written in Go and uses the Gin framework. It has a single endpoint, `/generate`, which takes a JSON body with a `address` field and returns a signed payload for signature minting an ERC-721 token. We then use this server in a vite react application to signature mint NFTs using the thirdweb React SDK.
+The server is written in Go and uses the Gin framework. It has a single endpoint, `/generate`, which takes a JSON body with a `address` field and returns a signed payload for [signature minting](https://portal.thirdweb.com/go/erc721_signature_minting) an ERC-721 token. We then use this server in a vite react application to signature mint NFTs using the thirdweb React SDK.
 
 ## How to set it up
 
@@ -19,10 +19,45 @@ Using private keys as an env variable is vulnerable to attacks and is not best p
 
 ## How to run it
 
-1. cd into the [backend](/backend/) folder.
-2. Run `go run main.go` to start the server.
-3. The app will be running on `localhost:8080`.
-4. You can test the app by running the vite app in the frontend folder.
+1. Setup the project using the following command:
+
+```bash
+make setup
+```
+
+This command will install the dependencies for both the frontend and the backend.
+
+2. Open a new terminal and run the frontend using the following command:
+
+```bash
+make run-frontend
+```
+
+You will now be able to see a connect wallet button in front of you if open up the site.
+
+3. Run the backend server using the following command:
+
+```bash
+make run-backend
+```
+
+This command will start the backend server on port 8080.
+
+You can test the server by making a request to the `/generate` endpoint with a JSON body containing an `address` field. On doing that you will receive a signed payload for minting an ERC-721 token like this:
+
+![generate output](https://blog.thirdweb.com/content/images/size/w1600/2023/05/make-a-request-to-the-API-and-recieve-the-signature.png)
+
+4. You will now need to replace the website origin in the [main.go](/backend/main.go) to allow the frontend to make requests to the backend. Replace the following line:
+
+```go
+		AllowOrigins: []string{"http://192.168.29.209:5173"},
+```
+
+With your frontend origin.
+
+5. You can now go to the frontend and click on the connect wallet button. Once your wallet is connected click on mint NFT and you will see a transaction pop up. Once you confirm it your NFT will be minted.
+
+![mint NFT](https://res.cloudinary.com/didkcszrq/image/upload/v1685820472/SCR-20230604-btqu_skvwbr.png)
 
 ## Learn More
 

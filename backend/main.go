@@ -22,7 +22,7 @@ func main() {
 	router := gin.Default()
 
 	router.Use(cors.New(cors.Config{
-		AllowOrigins: []string{"http://127.0.2.2:5173"},
+		AllowOrigins: []string{"http://192.168.29.209:5173"},
 		AllowMethods: []string{"PUT", "PATCH", "POST", "GET", "DELETE"},
 		AllowHeaders: []string{"Origin", "Content-Type"},
 	}))
