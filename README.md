@@ -9,13 +9,24 @@ The server is written in Go and uses the Gin framework. It has a single endpoint
 1. Install Go if you haven't already. You can find instructions [here](https://golang.org/doc/install).
 2. Create a new project by cloning this repository and renaming the folder.
 3. Update the contract addresses in [`common.go`](/backend/handlers/common.go) and [`App.tsx`](/frontend/src/App.tsx).
-4. Export your wallet private key from your wallet and add it to the .env file in the [backend](/backend/) folder.
+4. Add your private keys to the .env file in the [backend](/backend/) folder.
 
 ```bash
-PRIVATE_KEY=your_private_key
+WALLET_PRIVATE_KEY=paste_your_private_key_here
+THIRDWEB_SECRET_KEY=paste_your_secret_key_here
 ```
 
+- Generate your `THIRDWEB_SECRET_KEY` via thirdweb's [dashboard](https://thirdweb.com/create-api-key).
+
+- For `WALLET_PRIVATE_KEY` export your wallet private key from your wallet.
+
 Using private keys as an env variable is vulnerable to attacks and is not best practice. We are doing it in this guide for the sake of brevity, but we strongly recommend using a [secret manager to store your private key](https://portal.thirdweb.com/typescript/sdk.thirdwebsdk.fromwallet).
+
+5. Add your thirdweb client ID to the .env file in the [frontend](/frontend/) folder.
+
+```bash
+VITE_TEMPLATE_CLIENT_ID=paste_your_api_key_here
+```
 
 ## How to run it
 

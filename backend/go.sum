@@ -629,6 +629,8 @@ github.com/thirdweb-dev/go-sdk/v2 v2.0.0 h1:qR2BsNKJc717x8+nNWDcjCkoYS/Cw4Hph2TJ
 github.com/thirdweb-dev/go-sdk/v2 v2.0.0/go.mod h1:RaTf6H9WYYa+2oSjN5UxwMVfl6mwUX4xxsYIraHdN1c=
 github.com/thirdweb-dev/go-sdk/v2 v2.0.2 h1:49VboQkNkn8gB4itfrGmERxmdvoAUClTQvGOqBauKQY=
 github.com/thirdweb-dev/go-sdk/v2 v2.0.2/go.mod h1:s6owgyEA5wSoDRJpo63GqgI9sAmVdT6rQdFdkeciYxk=
+github.com/thirdweb-dev/go-sdk/v2 v2.1.4 h1:Soc9wfLJ+noH13vGCCfGy+UVAP9o0g32+PccKxq57iw=
+github.com/thirdweb-dev/go-sdk/v2 v2.1.4/go.mod h1:7g82nfhNB//dR7rHLfb/KJkUuJ7FctAP1W2GR/rl9lo=
 github.com/tinylib/msgp v1.0.2/go.mod h1:+d+yLhGm8mzTaHzB+wgMYrodPfmZrzkirds8fDWklFE=
 github.com/tklauser/go-sysconf v0.3.5/go.mod h1:MkWzOF4RMCshBAMXuhXJs64Rte09mITnppBXY/rYEFI=
 github.com/tklauser/go-sysconf v0.3.10 h1:IJ1AZGZRWbY8T5Vfk04D9WOA5WSejdflXxP03OUqALw=

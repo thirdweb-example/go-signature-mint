@@ -11,9 +11,13 @@ const activeChain = "mumbai";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);
+
 root.render(
   <React.StrictMode>
-    <ThirdwebProvider activeChain={activeChain}>
+    <ThirdwebProvider
+      activeChain={activeChain}
+      clientId={import.meta.env.VITE_TEMPLATE_CLIENT_ID}
+    >
       <App />
     </ThirdwebProvider>
   </React.StrictMode>
