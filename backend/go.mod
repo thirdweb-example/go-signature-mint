@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/gin-gonic/gin v1.8.2
 	github.com/joho/godotenv v1.4.0
-	github.com/thirdweb-dev/go-sdk/v2 v2.0.2
+	github.com/thirdweb-dev/go-sdk/v2 v2.1.4
 )
 
 require (

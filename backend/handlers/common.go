@@ -1,8 +1,9 @@
 package handler
 
 import (
-	"github.com/thirdweb-dev/go-sdk/v2/thirdweb"
 	"os"
+
+	"github.com/thirdweb-dev/go-sdk/v2/thirdweb"
 )
 
 func getContract() *thirdweb.NFTCollection {
@@ -15,10 +16,12 @@ func getContract() *thirdweb.NFTCollection {
 }
 
 func initSdk() *thirdweb.ThirdwebSDK {
-	privateKey := os.Getenv("PRIVATE_KEY")
+	privateKey := os.Getenv("WALLET_PRIVATE_KEY")
+	secretKey := os.Getenv("THIRDWEB_SECRET_KEY")
 
 	sdk, err := thirdweb.NewThirdwebSDK("goerli", &thirdweb.SDKOptions{
 		PrivateKey: privateKey,
+		SecretKey:  secretKey,
 	})
 	if err != nil {
 		panic(err)
